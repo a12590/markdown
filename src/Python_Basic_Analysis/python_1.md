@@ -51,7 +51,7 @@
   data['year'] = 2017，但是会所有行都新增同样的值
 
 - import
-csv
+
 1、header=None 表示 csv 文件第一行不是 header 而是数据；
 
 2、可以通过 skiprows 指定读取 csv 文件时跳过哪些行。
