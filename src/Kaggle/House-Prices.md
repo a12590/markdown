@@ -7,6 +7,8 @@
 1、Ipython（绘图时加上%matplotlib inline）
 
 2、对要预测的目标数据y：SalePrice有一个宏观的把握，这里是输出summary，也可以用boxplot，histogram等形式观察
+
+
     #Set up the matplotlib figure
 	plt.figure(figsize=(12,5))
     # 同subplot [1,2,1],表示在本区域里显示1行2列个图像，最后的1表示本图像显示在第一个位置。
@@ -20,6 +22,7 @@
 	plt.axis([10,14,0,180])
 
 3、通过Correlation matrix观察哪些变量会和预测目标关系比较大，哪些变量之间会有较强的关联
+
     data.corr() #相关系数矩阵，即给出了任意两之间的相关系数
     data.corr()[u'A'] #只显示“A”与其他的相关系数
     data[u'A'].corr(data[u'B']) #计算“A”与“B”的相关系数
@@ -64,6 +67,8 @@
 	意义：通过这些数值，我们再一一观察变量含义，判断一下是否可以把其中某些变量删除。
 
 4、接下来看missing value（feature_selection）
+
+
 	#每个变量的NaN记录个数求和算出来
 	total=df_train.isnull.sum.sort_values(ascending=False)
 	#再把所占的比例计算一下
@@ -84,6 +89,8 @@
 	df_train=df_train.drop(df_train.loc[df_train[ Electrical ].isnull].index)
 
 5、下面是看outliers
+
+
 	data=pd.concat([df_train[ SalePrice ],df_train[var]],axis=1)
 	data.plot.scatter(x=var,y= SalePrice ,ylim=);
 	# 发现数据（几个点的数据）偏离较远，删除
@@ -100,6 +107,7 @@
 　　　　dfQuery.index.get_level_values('gpcode')
 
 7、很重要的一步是把不符合正态分布的变量给转化成正态分布的（使用方法：np.log）
+
 	#histogram and normal probability plot
 
 	sns.distplot(df_train[ SalePrice ],fit=norm);
