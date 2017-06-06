@@ -60,7 +60,8 @@
 
 4、.to_csv(name,sep='\t') to_pickle(name) .read_pickle(name)
 
-Excel
+- Excel
+
 1、需要安装 xlrd 和 openpyxl（anconda默认安装）
 
 2、.ExcelFile（import） .parse（得到sheetname） .columns（指定读入的列）
@@ -68,7 +69,8 @@ Excel
 3、# 按照 Count 值降序排列（如何实现？）sort_index(axis=1) 的 axis 指定了按照列/行进行排序(默认升序排列)
   .Count.sort_values(ascending=False)
 
-Missing data
+- Missing data
+
 1、去除确实的数据，注意 foo 的元素并没有改变
   foo.dropna() 这货提醒了我，说明它仅仅进入foo的某个状态
 
@@ -78,6 +80,7 @@ Missing data
 3、填充，看看这一种填充方式：data 的内容不会修改，可采用赋值的方式进行修改，而且还是不修改！！
   data.fillna({'patient': -1, 'counts': 0})
 
+- time
 
 1、.value_counts().hist(bins=500)得到直方图
 
