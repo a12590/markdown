@@ -5,29 +5,30 @@
 - model ensemble（预测房价回归预测）
 1、根据Exploratory_data_analysis得到的结果信息，统一对数据进行处理
 
-	#单独处理：
+	# 单独处理：
 
-	#1、偏离点处理
+	# 1、偏离点处理
 	df_train=df_train.drop(df_train[df_train[ Id ]==524].index)
 
-	#2、对于占比例太大的变量，例如超过了15%，就看看它的含义，如果不是很重要，这种数据是可以删掉的。
+	# 2、对于占比例太大的变量，例如超过了15%，就看看它的含义，如果不是很重要，这种数据是可以删掉的。
 	to_delete = total_missing[total_missing>(train.shape[0]/3.)]
 
-	#3、很重要的一步是把不符合正态分布的变量给转化成正态分布的（使用方法：np.log）
+	# 3、很重要的一步是把不符合正态分布的变量给转化成正态分布的（使用方法：np.log）
 	train["SalePrice"] = np.log1p(train["SalePrice"])
+
 
 	# 统一处理：
 
-	#1、偏离点处理
+	# 1、偏离点处理
 	def data_preprocess(train,test)
 		outlier_idx = []
 		train.drop(train.index[outlier_idx],inplace=True)
 
-	#2、Miss not important
+	# 2、Miss not important
 	to_delete = ['Alley','FireplaceQu','PoolQC','Fence','MiscFeature']
     all_data = all_data.drop(to_delete,axis=1)
 
-	#3、log transform skewed numeric features（这种方法我还是觉得蛮奇怪的）
+	# 3、log transform skewed numeric features（这种方法我还是觉得蛮奇怪的）
 	numeric_feats = all_data.dtypes[all_data.dtypes != "object"].index
     skewed_feats = train[numeric_feats].apply(lambda x: skew(x.dropna())) #compute skewness
     skewed_feats = skewed_feats[skewed_feats > 0.75]
