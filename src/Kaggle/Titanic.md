@@ -2,27 +2,55 @@
 
 ## Contents
 
-**特征分析与选择**
-**特征工程1**
-一般方法：
-1、 读取训练集和测试集为 DataFrame；
-2、 训练集数据
-（head查看）
-（info可以看到有缺失值的列）
-（describe，mean字段等查看具体数据数值）
-3、 数据清洗
-（drop去除 PassengerId、Name、Ticket 字段的值+head查看结果）
-4、 训练数据存在空数据
-（同理 .isnull().head()）
+- import 
+
+        # pandas
+        import pandas as pd
+        from pandas import Series,DataFrame
+
+        # numpy, matplotlib, seaborn
+        import numpy as np
+        import matplotlib.pyplot as plt
+        import seaborn as sns
+        sns.set_style('whitegrid')
+        %matplotlib inline
+        matplotlib.style.use('ggplot')
+
+        # remove warnings
+        import warnings
+        warnings.filterwarnings('ignore')
+
+        # machine learning
+        from sklearn.linear_model import LogisticRegression
+        from sklearn.svm import SVC, LinearSVC
+        from sklearn.ensemble import RandomForestClassifier
+        from sklearn.neighbors import KNeighborsClassifier
+        from sklearn.naive_bayes import GaussianNB
+        
+        
+
+- 特征分析与选择**
+
+        一般方法：
+        1、 读取训练集和测试集为 DataFrame；
+        2、 训练集数据
+        （head查看）
+        （info可以看到有缺失值的列）
+        （describe，mean字段等查看具体数据数值）
+        3、 数据清洗
+        （drop去除 PassengerId、Name、Ticket 字段的值+head查看结果）
+        4、 训练数据存在空数据
+        （同理 .isnull().head()）
 
 **** 分析 Embarked 特征对 Survived 的影响 ****
 
-1、数据缺失值处理：
-将 Embarked 缺失的数据填充为最多的值 S（`print train_data['Embarked'].max() => S`）（`.fillna('S')`）
-2、`.factorplot` 分析得到的是Embarked 和Survived 之间的关系（默认是折现图）。
-（kind参数转化为 bar 柱形图 col 多维度关系图。size, aspect 指定绘制图像的大小）
+        1、数据缺失值处理：
+        将 Embarked 缺失的数据填充为最多的值 S（`print train_data['Embarked'].max() => S`）（`.fillna('S')`）
+        2、`.factorplot` 分析得到的是Embarked 和Survived 之间的关系（默认是折现图）。
+        （kind参数转化为 bar 柱形图 col 多维度关系图。size, aspect 指定绘制图像的大小）
 
 **补充：matplotlib 绘图库的简单用法**
+
 ```
 // plt.figure() 生成空窗：不能通过空Figure绘图，必须用add_subplot创建一个或多个subplot才行。
 plt.figure().add_subplot(2,2,1)
