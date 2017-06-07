@@ -4,7 +4,7 @@
 
 - import
 
-1、	
+	# 	
 	import datetime
 	import numpy as np
 	import pandas as pd
@@ -18,7 +18,7 @@
 	from sklearn.svm import SVR
 	from sklearn.neighbors import KNeighborsRegressor
 	from scipy.stats import skew
-2、
+
 	data_preprocess(train,test)  return X_train,X_test,y
 	model_random_forecast(Xtrain,Xtest,ytrain): return y_pred, -model.best_score_
 	model_gradient_boosting_tree(Xtrain,Xtest,ytrain): return y_pred, -model.best_score_
