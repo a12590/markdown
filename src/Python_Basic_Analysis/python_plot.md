@@ -38,13 +38,13 @@
         for i,var in enumerate(['normal','gamma','poisson']):有了0 1 2 以及对应的title值
         设置：variables[var].cumsum(0).plot(ax=axes[i], title=var)
         
-      6、crosstab 用于按照指定的行和列统计分组频数。
-      death_counts = pd.crosstab([titanic.pclass, titanic.sex], titanic.survived.astype(bool), dropna=True)
-      death_counts
-      
-      7、将两类数据图标堆叠起来, color 指定堆叠的两类的颜色
-      death_counts.plot(kind='bar', stacked=True, color=['black', 'gold'], grid=True)
-      这里：将二分结果，gold为True
+            6、crosstab 用于按照指定的行和列统计分组频数。
+            death_counts = pd.crosstab([titanic.pclass, titanic.sex], titanic.survived.astype(bool), dropna=True)
+            death_counts
+
+            7、将两类数据图标堆叠起来, color 指定堆叠的两类的颜色
+            death_counts.plot(kind='bar', stacked=True, color=['black', 'gold'], grid=True)
+            这里：将二分结果，gold为True
 
       
       
