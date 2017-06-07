@@ -2,6 +2,12 @@
 
 ## Contents
 
+	import numpy as np 
+	import pandas as pd
+	import seaborn as sns
+	import matplotlib.pyplot as plt
+	%matplotlib inline	
+
 - Exploratory_data_analysis
 
 1、Ipython（绘图时加上%matplotlib inline）
