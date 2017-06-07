@@ -2,6 +2,16 @@
 
 ## Contents
 
+- import 
+
+      %matplotlib inline
+      import matplotlib.pyplot as plt
+      import pandas as pd
+      import numpy as np
+
+      pd.set_option('max_columns', 30)
+      pd.set_option('max_rows', 20)
+
 - Series
 
 1、List和Array、Series（一维数组）的区别：List中的元素可以是不同的数据类型，而Array和Series中则只允许存储相同的数据类型
