@@ -47,6 +47,7 @@
         1、数据缺失值处理：
         将 Embarked 缺失的数据填充为最多的值 S（`print train_data['Embarked'].max() => S`）（`.fillna('S')`）
         2、`.factorplot` 分析得到的是Embarked 和Survived 之间的关系（默认是折现图）。
+        .plot(kind='bar')
         （kind参数转化为 bar 柱形图 col 多维度关系图。size, aspect 指定绘制图像的大小）
 
 **补充：matplotlib 绘图库的简单用法**
