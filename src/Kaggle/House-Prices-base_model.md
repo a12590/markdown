@@ -2,6 +2,31 @@
 
 ## Contents
 
+- import
+
+1、	
+	import datetime
+	import numpy as np
+	import pandas as pd
+	import xgboost as xgb
+	from sklearn import preprocessing
+	from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor, ExtraTreesRegressor
+	from sklearn.grid_search import GridSearchCV
+	from sklearn.cross_validation import ShuffleSplit
+	from sklearn.metrics import make_scorer, mean_squared_error
+	from sklearn.kernel_ridge import KernelRidge
+	from sklearn.svm import SVR
+	from sklearn.neighbors import KNeighborsRegressor
+	from scipy.stats import skew
+2、
+	data_preprocess(train,test)  return X_train,X_test,y
+	model_random_forecast(Xtrain,Xtest,ytrain): return y_pred, -model.best_score_
+	model_gradient_boosting_tree(Xtrain,Xtest,ytrain): return y_pred, -model.best_score_
+	model_xgb_regression(Xtrain,Xtest,ytrain): return y_pred, -model.best_score_
+	model_extra_trees_regression(Xtrain,Xtest,ytrain): return y_pred, -model.best_score_
+	create_submission(prediction,score): 
+	pd.DataFrame({'Id': test['Id'].values, 'SalePrice': prediction}).to_csv(sub_file, index=False)
+
 - model ensemble（预测房价回归预测）
 
 1、根据Exploratory_data_analysis得到的结果信息，统一对数据进行处理
