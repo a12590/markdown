@@ -1,11 +1,8 @@
 # Kaggle-House-Prices
 
 ## Contents
-
-- import
-
-	# 	
-	import datetime
+	
+	import datetime 
 	import numpy as np
 	import pandas as pd
 	import xgboost as xgb
