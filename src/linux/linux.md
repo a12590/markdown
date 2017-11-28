@@ -25,8 +25,20 @@ cat /proc/cpuinfo | grep "physical id" | sort| uniq| wc -l
 # 用户添加
 user add test -d /home/t1
 passwd test
+vi /etc/sudoers
+adduser yufeng
+passwd  yufeng
+yufeng  ALL=(ALL)    ALL
+yufeng  cadyf
+
+.bashrc
+远程访问Jupyter Notebook
+
 
 # 文件（普通查询。权限查询）
+1、查看文件的最后20行：tail -n 20 filename
+2、查看某关键词前后几行内容：cat filename | grep AAA -A4(后4行) -B4(前4行)
+3、
 ls --help | more # 分页：more 查询：ls 帮助信息：help
 chmod 755 a.txt
 chmod u=rwx,g=rx,o=rx a.txt（还没用过+u +g +o）
@@ -36,9 +48,6 @@ echo "angelababy,zhen de hen xihuan ni" > qingshu.txt  把左边的输出放到�
 
 多文件压缩
 zip -r .-x "" ""
-
-# 网络查询
-vi /etc/sysconfig/netwprk
 
 # GPU信息查看
 nvidia显卡的话可以用nvidia-smi命令来查
@@ -57,6 +66,16 @@ show processlist;
 pip uninstall mysql-python
 pip install mysql-python==1.2.5
 
+数据库索引原理以及类别以及具体使用场景（BUG）
+原理。。。
+1、普通索引
+2、唯一索引
+3、主键索引
+4、主键索引
+
+这里应该C++ 会比较研究红黑树吧
+
+
 # 链接
 硬链接：
 ln f1 f2
@@ -65,6 +84,18 @@ ln -s f1 f3
 当删除f1，f2仍旧有值，f3将失效
 
 
+# 网络管理
+1、ifconfig
+2、netstat
+netstat -anp 可是查看正在监听网络的程序。。。
+3、hostname
+4、ping
+5、traceroute
+6、ifconfig
+vi /etc/sysconfig/netwprk
+
+
+#
 
 '''
 
