@@ -26,13 +26,16 @@ cat /proc/cpuinfo | grep "physical id" | sort| uniq| wc -l
 user add test -d /home/t1
 passwd test
 
-# 文件查询（普通查询。权限查询）
+# 文件（普通查询。权限查询）
 ls --help | more # 分页：more 查询：ls 帮助信息：help
 chmod 755 a.txt
 chmod u=rwx,g=rx,o=rx a.txt（还没用过+u +g +o）
 user group exe
 chown u:public a.txt
 echo "angelababy,zhen de hen xihuan ni" > qingshu.txt  把左边的输出放到右边的文件里去
+
+多文件压缩
+zip -r .-x "" ""
 
 # 网络查询
 vi /etc/sysconfig/netwprk
@@ -53,6 +56,14 @@ show processlist;
 2、或者安装一个低版本的MySQLdb：
 pip uninstall mysql-python
 pip install mysql-python==1.2.5
+
+# 链接
+硬链接：
+ln f1 f2
+软链接=符号链接
+ln -s f1 f3
+当删除f1，f2仍旧有值，f3将失效
+
 
 
 '''
