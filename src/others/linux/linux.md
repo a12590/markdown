@@ -24,6 +24,43 @@ chmod u=rwx,g=rx,o=rx a.txt
 user group exe
 
 chown u:public a.txt
+
+
+
+echo "angelababy,zhen de hen xihuan ni" > qingshu.txt  把左边的输出放到右边的文件里去
+
+
+磁盘空间信息查看
+df -h  查看磁盘空间状态信息
+du -sh * 查看当前目录下所有子目录和文件的汇总大小
+
+nvidia显卡的话可以用nvidia-smi命令来查
+
+lspci  | grep -i vga
+
+重要的参数主要是温度、内存使用、GPU占有率
+57C
+
+
+关于系统没有apt-get下的MySQL安装：
+1、MySQLdb的版本比你安装的mysql版本高，升级一下mysql数据库
+2、或者安装一个低版本的MySQLdb：
+pip uninstall mysql-python
+pip install mysql-python==1.2.5
+
+安装的版本
+
+Mysql使用kill命令解决死锁问题(杀死某条正在执行的sql语句)
+
+show processlist;
+
+# 总核数 = 物理CPU个数 X 每颗物理CPU的核数
+# 总逻辑CPU数 = 物理CPU个数 X 每颗物理CPU的核数 X 超线程数
+
+# 查看物理CPU个数
+cat /proc/cpuinfo | grep "physical id" | sort| uniq| wc -l
+
+
 '''
 
 ```
