@@ -22,3 +22,18 @@ ORDER BY student_number DESC,dept_name
 SELECT、dim、FROM、relation、whereClause、 groupBy、havingClause、 orderBy
 SQL语句通过web工程的SQL拼接工具的书写有了深度地认识。
 
+4、
+Select Score , (Select distinct Score from Scores order by Score desc)
+as Rank from Scores
+order by Score desc
+
+# COUNT(Ranking.Score) 都搞了这么久的count。哎
+Select Scores.Score,COUNT(Ranking.Score) AS Rank
+# 可以同时查两，不用 关联。这个触动我了
+FRROM Sccores,(Select DISTINCT Score FROM Scores) Ranking
+
+Where Scores.Score <= Ranking.Score
+#  一定要有 GROUP BY？
+GROUP BY Scores.Id,Scores.Score ORDER BY Scores.Score DESC;
+
+
